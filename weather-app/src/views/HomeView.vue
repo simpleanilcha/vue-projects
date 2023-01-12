@@ -16,6 +16,15 @@
         </template>
       </ul>
     </div>
+
+    <div class="flex flex-col gap-4">
+      <Suspense>
+        <CityList />
+        <template #fallback>
+          <p class="text-white text-center py-10">Loading...</p>
+        </template>
+      </Suspense>
+    </div>
   </main>
 </template>
 
@@ -23,6 +32,7 @@
 import { ref } from "@vue/reactivity";
 import axios from 'axios';
 import { useRouter } from "vue-router";
+import CityList from "../components/CityList.vue";
 
 const searchQuery = ref('');
 const queryTimeout = ref(null);
