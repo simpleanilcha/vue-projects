@@ -21,7 +21,8 @@
       <Suspense>
         <CityList />
         <template #fallback>
-          <p class="text-white text-center py-10">Loading...</p>
+          <!-- <p class="text-white text-center py-10">Loading...</p> -->
+          <CityCardSkeleton />
         </template>
       </Suspense>
     </div>
@@ -32,6 +33,7 @@
 import { ref } from "@vue/reactivity";
 import axios from 'axios';
 import { useRouter } from "vue-router";
+import CityCardSkeleton from "../components/CityCardSkeleton.vue";
 import CityList from "../components/CityList.vue";
 
 const searchQuery = ref('');
